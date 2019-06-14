@@ -1,11 +1,12 @@
-//back-end logic
+//back-end
 const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I can\'t do that."'];
+const errorMessage = "Error: Enter a single number value!";
 var outputArray = [];
 
 function checkData() {
   var string = $("#number").val();
   if(isNaN(string) || ! /\S/.test(string)) {
-    return $(".error").text("Error: Enter a single number value!");
+    return $(".error").text(errorMessage);
   } else {
     $(".error").text("");
     return string;
@@ -34,7 +35,7 @@ function beepBoop() {
   }
 };
 
-//front-end logic
+//front-end
 $(document).ready(function(){
   $("#boop-form").submit(function(event) {
     event.preventDefault();
