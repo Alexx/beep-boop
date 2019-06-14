@@ -6,8 +6,9 @@ p, label {
   font-size: 16px;
 }
 
-.jumbotron, .panel-heading {
+.jumbotron {
   text-align: center;
+  padding: 0;
 }
 
 .error {
