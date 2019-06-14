@@ -1,7 +1,6 @@
-form, form input {
-  width: 50%;
-  margin-left:auto;
-  margin-right: auto;
+
+.jumbotron {
+  text-align: center;
 }
 
 .error {
