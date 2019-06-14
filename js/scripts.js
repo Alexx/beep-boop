@@ -1,5 +1,5 @@
 //back-end logic
-const outputMessages = ["Beep!", "Boop!", "I'm sorry, Dave. I'm afraid I can't do that."];
+const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I can\'t do that."'];
 
 function gatherInputData() {
   return $("#number").val();
@@ -27,10 +27,8 @@ function beepBoop() {
 
 //front-end logic
 $(document).ready(function(){
-
   $("#boop-form").submit(function(event) {
     event.preventDefault();
-    $(".output").append(beepBoop());
+    $(".output").append(beepBoop() + ", ");
   });
-
 });
