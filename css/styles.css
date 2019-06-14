@@ -1,0 +1,9 @@
+form {
+  width: 50%
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding: 8px;
+}

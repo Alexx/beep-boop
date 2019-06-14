@@ -1,16 +1,22 @@
 //back-end logic
 const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I can\'t do that."'];
 
-function gatherInputData() {
-  return $("#number").val();
+function checkData() {
+  debugger
+  if(isNaN($("#number").val())) {
+    return $(".error").text("Error: Enter a number!");
+  } else {
+    $(".error").text("");
+    return $("#number").val();
+  }
 };
 
 function checkPriority() {
   var priority = 0;
-  var userInput = gatherInputData().split("");
+  var userInput = checkData().split("");
 
   for(number = 0; number < userInput.length; number++){
-    if(priority < userInput[number]) {
+    if(priority < userInput[number] && userInput[number] <= 3) {
       priority = userInput[number];
     }
   }
@@ -21,7 +27,7 @@ function beepBoop() {
   if (checkPriority()) {
     return checkPriority();
   } else {
-    return gatherInputData();
+    return checkData();
   }
 };
 
