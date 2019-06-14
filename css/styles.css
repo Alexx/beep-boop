@@ -15,8 +15,9 @@ p, label {
   padding: 0;
 }
 
-.jumbotron h1, .jumbotron h3 {
-  position: absolute;
+.jumbotron div {
+  padding-top: 140px;
+  text-shadow: 2px 2px 4px black;
 }
 
 .error {
