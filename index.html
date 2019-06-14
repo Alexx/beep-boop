@@ -9,9 +9,15 @@
   </head>
   <body>
     <div class="container">
-      <div class="carousel d-block w-100">
-        <img src="img/bg.jpg" alt="a picture of Portland">
+
+      <div class="card card-raised card-carousel">
+        <div class="carousel-inner">
+          <div class="carousel-active">
+            <img class="d-block w-100" src="img/bg.jpg" alt="a picture of Portland">
+          </div>
+        </div>
       </div>
+
       <div class="jumbotron">
         <h1>Beep Boop</h1>
         <h3>A subsidiary of Mega Corp</h3>
@@ -19,8 +25,8 @@
 
       <div class="row">
         <div class="col-md-4">
-          <div class="card">
-            <div class="card-title">
+          <div class="card card-raised">
+            <div class="card-header">
               <h3>Form</h3>
             </div>
             <div class="card-body">
@@ -39,11 +45,11 @@
         </div>
 
         <div class="col-md-8">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
+          <div class="card card-raised">
+            <div class="card-header">
               <h3>Output</h3>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
               <p class="output"></p>
             </div>
           </div>
