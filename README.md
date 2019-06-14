@@ -12,7 +12,7 @@ _This web page will ask the user to input any given number. After submitting tha
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| The program will not output anything if a non number is entered | red | Error: Enter a number! | 
+| The program will not output anything if a non number is entered | red | Error: Enter a single number value! | 
 | This program will output numbers 4-9,0 directly to the web page | 5 | 5 |
 | numbers containing 1 (least priority) | 1 | "Beep!" |
 | numbers containing 2 (medium priority) | 21 | "Boop!" |
