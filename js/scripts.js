@@ -42,6 +42,6 @@ $(document).ready(function(){
     $(".output").hide();
     outputArray.push(" " + beepBoop())
     $(".output").text(outputArray);
-    $(".output").fadeIn(1500);
+    $(".output").fadeIn(1000);
   });
 });
