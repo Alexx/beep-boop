@@ -8,6 +8,15 @@
 
 _This web page will ask the user to input any given number. After submitting that number, the program will translate 1's, 2's and 3's to special messages, in the order of least priority to top priority and print that message to the web page. Any other number will be printed directly to the web page._
 
+## Spec
+
+| Behavior | Input | Output |
+| ------------- |:-------------:| -----:|
+| The program will not output anything if a non number is entered | red | Error: Enter a number! | 
+| This program will output numbers 4-9,0 directly to the web page | 5 | 5 |
+| numbers containing 1 (least priority) | 1 | "Beep!" |
+| numbers containing 2 (medium priority) | 21 | "Boop!" |
+| numbers containing 3 (highest priority) | 13 | "I'm sorry, Dave. I'm afraid I can't do that." |
 ## Setup/Installation
 
 Step 1: Clone this repository to your desktop

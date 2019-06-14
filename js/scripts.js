@@ -2,12 +2,12 @@
 const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I can\'t do that."'];
 
 function checkData() {
-  debugger
-  if(isNaN($("#number").val())) {
-    return $(".error").text("Error: Enter a number!");
+  var string = $("#number").val();
+  if(isNaN(string) || ! /\S/.test(string)) {
+    return $(".error").text("Error: Enter a single number!");
   } else {
     $(".error").text("");
-    return $("#number").val();
+    return string;
   }
 };
 
