@@ -3,10 +3,10 @@ const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I 
 const errorMessage = "Error: Enter a single number value!";
 var outputArray = [];
 
-function checkData() {
-  var string = $("#number").val();
-  if(isNaN(string) || ! /\S/.test(string)) {
-    return $(".error").text(errorMessage);
+function checkData(string) {
+  string = parseInt(string);
+  if(isNaN(string)) {
+    $(".error").text(errorMessage);
   } else {
     $(".error").text("");
     return string;
@@ -14,16 +14,11 @@ function checkData() {
 };
 
 function countInput() {
-  var userInput = parseInt(checkData());
-  for(var index = userInput; index >= 0; index--) {
-    debugger
-    checkPriority(index);
-  }
-}
+
+};
 
 function checkPriority(currentNum) {
   var priority = 0;
-  currentNum = currentNum.split("");
 
   for(number = 0; number < currentNum.length; number++){
     if(priority < currentNum[number] && currentNum[number] <= 3) {
@@ -31,15 +26,20 @@ function checkPriority(currentNum) {
     }
   }
   return outputMessages[priority - 1];
-}
+};
 
-function beepBoop() {
-  //check if input is between 1-3 and attach corresponding message
-  if (checkPriority()) {
-    return checkPriority();
-  } else {
-    //else return the orginal number
-    return checkData();
+function beepBoop(input) {
+  input = parseInt(checkData(input));
+  for(var index = input; index >= 0; index--) {
+    //check if input is between 1-3 and attach corresponding message
+    if (checkPriority(index)) {
+      console.log("pushing " + index);
+      outputArray.push(checkPriority(index));
+    } else {
+      //else return the orginal number
+      console.log("pushing " + index);
+      outputArray.push(checkData(index));
+    }
   }
 };
 
@@ -48,8 +48,9 @@ $(document).ready(function(){
   $("#boop-form").submit(function(event) {
     event.preventDefault();
     $(".output").hide();
-    //outputArray.push(" " + beepBoop())
-    countInput();
+    var userInput = $("#number").val();
+    beepBoop(userInput);
+    // countInput();
     $(".output").text(outputArray);
     $(".output").fadeIn(1000);
   });
