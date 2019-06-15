@@ -19,7 +19,8 @@ function countInput() {
 
 function checkPriority(currentNum) {
   var priority = 0;
-
+  currentNum = currentNum.toString();
+  currentNum = currentNum.split("")
   for(number = 0; number < currentNum.length; number++){
     if(priority < currentNum[number] && currentNum[number] <= 3) {
       priority = currentNum[number];
@@ -32,12 +33,11 @@ function beepBoop(input) {
   input = parseInt(checkData(input));
   for(var index = input; index >= 0; index--) {
     //check if input is between 1-3 and attach corresponding message
+
     if (checkPriority(index)) {
-      console.log("pushing " + index);
       outputArray.push(checkPriority(index));
     } else {
       //else return the orginal number
-      console.log("pushing " + index);
       outputArray.push(checkData(index));
     }
   }
