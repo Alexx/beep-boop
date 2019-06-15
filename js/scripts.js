@@ -31,7 +31,7 @@ function checkPriority(currentNum) {
 
 function beepBoop(input) {
   input = parseInt(checkData(input));
-  for(var index = input; index >= 0; index--) {
+  for(var index = 0; index <= input; index++) {
     //check if input is between 1-3 and attach corresponding message
 
     if (checkPriority(index)) {
@@ -48,6 +48,7 @@ $(document).ready(function(){
   $("#boop-form").submit(function(event) {
     event.preventDefault();
     $(".output").hide();
+
     var userInput = $("#number").val();
     beepBoop(userInput);
     // countInput();
