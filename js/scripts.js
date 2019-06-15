@@ -3,6 +3,12 @@ const outputMessages = ['"Beep!"', '"Boop!"', '"I\'m sorry, Dave. I\'m afraid I 
 const errorMessage = "Error: Enter a single number value!";
 var outputArray = [];
 
+function outputData() {
+  $(".output").hide();
+  $(".output").text(outputArray);
+  $(".output").fadeIn(1000);
+}
+
 function checkData(string) {
   string = parseInt(string);
   if(isNaN(string)) {
@@ -11,10 +17,6 @@ function checkData(string) {
     $(".error").text("");
     return string;
   }
-};
-
-function countInput() {
-
 };
 
 function checkPriority(currentNum) {
@@ -30,6 +32,7 @@ function checkPriority(currentNum) {
 };
 
 function beepBoop(input) {
+  outputArray = [];
   input = parseInt(checkData(input));
   for(var index = 0; index <= input; index++) {
     //check if input is between 1-3 and attach corresponding message
@@ -47,12 +50,8 @@ function beepBoop(input) {
 $(document).ready(function(){
   $("#boop-form").submit(function(event) {
     event.preventDefault();
-    $(".output").hide();
-
     var userInput = $("#number").val();
     beepBoop(userInput);
-    // countInput();
-    $(".output").text(outputArray);
-    $(".output").fadeIn(1000);
+    outputData();
   });
 });
