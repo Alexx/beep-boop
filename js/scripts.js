@@ -13,13 +13,21 @@ function checkData() {
   }
 };
 
-function checkPriority() {
-  var priority = 0;
-  var userInput = checkData().split("");
+function countInput() {
+  var userInput = parseInt(checkData());
+  for(var index = userInput; index >= 0; index--) {
+    debugger
+    checkPriority(index);
+  }
+}
 
-  for(number = 0; number < userInput.length; number++){
-    if(priority < userInput[number] && userInput[number] <= 3) {
-      priority = userInput[number];
+function checkPriority(currentNum) {
+  var priority = 0;
+  currentNum = currentNum.split("");
+
+  for(number = 0; number < currentNum.length; number++){
+    if(priority < currentNum[number] && currentNum[number] <= 3) {
+      priority = currentNum[number];
     }
   }
   return outputMessages[priority - 1];
@@ -40,7 +48,8 @@ $(document).ready(function(){
   $("#boop-form").submit(function(event) {
     event.preventDefault();
     $(".output").hide();
-    outputArray.push(" " + beepBoop())
+    //outputArray.push(" " + beepBoop())
+    countInput();
     $(".output").text(outputArray);
     $(".output").fadeIn(1000);
   });
