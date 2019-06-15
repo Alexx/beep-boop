@@ -15,8 +15,8 @@ _This web page will ask the user to input any given number. After submitting tha
 | The program will not output anything if a non number is entered | red | Error: Enter a single number value! |
 | This program will output numbers 4-9,0 directly to the web page | 5 | 5 |
 | numbers containing 1 (least priority) will replace the inputted number with a special word | 1 | "Beep!" |
-| numbers containing 2 (medium priority) will replace the inputted number with a special word | 21 | "Boop!" |
-| numbers containing 3 (highest priority) will replace the inputted number with a special phrase | 13 | "I'm sorry, Dave. I'm afraid I can't do that." |
+| numbers containing 2 (medium priority) will replace the inputted number with a special word | 2 | "Boop!" |
+| numbers containing 3 (highest priority) will replace the inputted number with a special phrase | 3 | "I'm sorry, Dave. I'm afraid I can't do that." |
 
 ## Setup/Installation
 
